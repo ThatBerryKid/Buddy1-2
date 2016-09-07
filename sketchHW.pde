@@ -1,4 +1,6 @@
 Eye e1, e2;
+int mouseClicks;
+
 
 void setup(){
 background (0,204,0);  
@@ -33,17 +35,60 @@ void update(int mx, int my){
 }
 
 void display(){
+ noStroke();
+ color from = color(0,204,0);
+ color to = color(225,0,0);
+ color step1 = lerpColor(from, to, .44);
+ color step2 = lerpColor(from, to, .66);
+ color step3 = lerpColor(from, to, .88);
+ color step4 = lerpColor(from, to, .90);
+ color step5 = lerpColor(from, to, .99);
+ 
+ //Step 5
+ if (mouseClicks >= 5){
+ fill(step5);
+ rect(0,0,500,500);
+ }
+ 
+ //Step 4
+ if (mouseClicks == 4) {
+ fill(step4);
+ rect(0,0,500,500);
+ }
+ 
+ //Step 3
+ if (mouseClicks == 3) {
+ fill(step3);
+ rect(0,0,500,500);
+ }
+ 
+ 
+ //Step 2
+ if (mouseClicks == 2) {
+ fill(step2);
+ rect(0,0,500,500);
+ }
+ 
+ //Step 1
+ if (mouseClicks == 1) {
+ fill(step1);
+ rect(0,0,500,500);
+ }
+ 
+ 
+ //Step 0
+ if (mouseClicks == 0) {
+ fill(from);
+ rect(0,0,500,500);
+ }
+  
+//Eyes
 pushMatrix();
 translate(x,y);
 if (mousePressed == true) {
-  fill(0,204,0);
-  ellipse(0,0,size,size);
-  ellipse(0,0,size,size);
   fill(255);
   rect(-100,0,200,20);
 }else{
- fill(0,204,0);
- ellipse(0,0,size+60,size+60);
 fill(255,255,255);
 ellipse(0,0,size,size);
 rotate(angle);
@@ -51,14 +96,20 @@ fill(51,153,255);
 ellipse(size/4,0,size/2,size/2);
 }
 popMatrix();
-
+//Nose
 fill(255,255,255);
 rect(260,150,20,200);
 rect(220,330,40,20);
+
+//Mouth
 rect(150,400,mouseY,20);
 rect(150,400,50,20);
 fill(0,204,0);
 rect(500,400,-mouseY/2,20);
 rect(50,400,mouseY/2.5,20);
 }
+}
+
+void mousePressed (){
+ if (mouseButton == LEFT) {mouseClicks++;} else { mouseClicks = 0; } 
 }
