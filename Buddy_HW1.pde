@@ -177,7 +177,7 @@ noStroke();
  }
    //nega Step2
   if (mouseClicks <= -6) {
- fill(135,163,255);
+ fill(95,224,255);
  rect(0,0,500,500);
  //Mouth
  fill(255,255,255);
