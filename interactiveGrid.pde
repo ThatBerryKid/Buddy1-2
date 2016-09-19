@@ -1,8 +1,8 @@
 float xLim =0;
 float yLim =0;
-float red =0;
-float green =0;
-float blue =0;
+float red =100;
+float green =100;
+float blue =100;
 
 void setup(){
   size(1000,1000);
