@@ -1,10 +1,14 @@
 /**
+  Buddy Ver2
+  By James W. Berry
+  Remixed code from:
  * Multiple Nested PApplets (v2.0)
  * by GoToLoop (2015/May/21)
  *
  * forum.processing.org/two/discussion/10937/multiple-sketches
  * forum.processing.org/two/discussion/7036/multiple-screens
  */
+ 
 import java.awt.MouseInfo;
 Eye e1, e2;
  
@@ -32,18 +36,17 @@ void setup() {
 }
  
 void draw() {
-  
   int ex = MouseInfo.getPointerInfo().getLocation().x;
   int why = MouseInfo.getPointerInfo().getLocation().y;
   background(0, 204, 0);
-  fill(0,204,0);
+ fill(0,204,0);
  rect(0,0,500,500);
  //Mouth
  fill(255,255,255);
  rect(150,400,why/2,20);
  rect(150,400,50,20);
  fill(0,204,0);
- rect(500,400,-why/5,20);
+ rect(500,400,-why/4.4,20);
  rect(50,400,why/10,20);
  
  //Nose
@@ -74,7 +77,6 @@ class Eye {
   void update(int mx, int my){
     angle = atan2(my-y,mx-x);
   }
-
   void display(){
   
     //Eyes
