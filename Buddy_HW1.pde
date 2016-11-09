@@ -28,6 +28,9 @@ noStroke();
  color step4 = lerpColor(from, to, .88);
  color step5 = lerpColor(from, to, .95);
  
+ if (mouseClicks >=6){
+  mouseClicks =6; 
+ }
  //Step 6
  if (mouseClicks >= 6){
  fill(to);
@@ -165,7 +168,7 @@ noStroke();
  rect(50,400,mouseY/2.5,20);
  }
   //nega Step
-  if (mouseClicks < 0 && mouseClicks > -6) {
+  if (mouseClicks < 0 && mouseClicks > -2) {
  fill(from);
  rect(0,0,500,500);
  //Mouth
@@ -176,7 +179,7 @@ noStroke();
  rect(500,400,-mouseY/2,20);
  }
    //nega Step2
-  if (mouseClicks <= -6) {
+  if (mouseClicks <= -2) {
  fill(95,224,255);
  rect(0,0,500,500);
  //Mouth
@@ -185,7 +188,9 @@ noStroke();
  rect(150,400,20,-50);
  rect(330,400,20,-50);
   }
- 
+ if (mouseClicks <=-2){
+  mouseClicks =-2; 
+ }
  
  //Nose
 fill(255,255,255);
